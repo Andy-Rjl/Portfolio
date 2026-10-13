@@ -1,0 +1,88 @@
+<div class="m-0 font-['Inter',sans-serif] flex justify-center px-8 box-border transition-colors duration-300"
+     [ngClass]="isDarkMode() ? 'bg-slate-900 text-white' : 'bg-white text-[#111827]'">
+
+  <div class="about w-full max-w-230">
+
+    <p class="label text-2xl font-semibold m-0 mb-4.5">
+      <span class="text-emerald-500">Qui</span> suis-je?
+    </p>
+
+    <h2 class="statement font-['Lora',sans-serif] font-bold text-[2.3rem] m-0 mb-5 max-[700px]:text-[1.9rem]">
+      Je construis des expériences web et mobiles simples à utiliser, solides à faire tourner.
+    </h2>
+
+    <p class="text-[1.05rem] m-0 mb-16 transition-colors duration-300"
+       [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-[#4B5563]'">
+      Diplômé d'une Licence en informatique cette année, je me suis spécialisé en développement full-stack, avec un intérêt particulier pour le pont entre le web et le mobile. Ce qui me motive : comprendre un vrai besoin, puis construire quelque chose qui le résout proprement.
+    </p>
+
+    <p class="timeline-title text-[1.3rem] font-semibold m-0 mb-4">Mon parcours</p>
+
+    <div class="timeline grid grid-cols-3 gap-1 mb-18 max-[700px]:grid-cols-2 max-[700px]:gap-y-8">
+      
+      <!-- Étape 1 -->
+      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-1.25 after:left-3 after:w-full after:h-0.5"
+           [ngClass]="isDarkMode() ? 'after:bg-slate-700' : 'after:bg-[#E7E9EC]'">
+        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2023</p>
+        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Formation académique</h4>
+        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+           [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
+          Approfondissement des fondamentaux : algorithmique, bases de données.
+        </p>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-1.25 after:left-3 after:w-full after:h-0.5"
+           [ngClass]="isDarkMode() ? 'after:bg-slate-700' : 'after:bg-[#E7E9EC]'">
+        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2023</p>
+        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Débuts en code</h4>
+        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+           [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
+          Premiers projets personnels, découverte du développement web.
+        </p>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:hidden">
+        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2026</p>
+        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Licence obtenue</h4>
+        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+           [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
+          Diplômé, prêt à rejoindre une équipe et continuer à apprendre.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Section Ma façon de travailler -->
+    <div class="split grid grid-cols-1 gap-14 pt-10 border-t border-solid transition-colors duration-300"
+         [ngClass]="isDarkMode() ? 'border-slate-800' : 'border-[#E7E9EC]'">
+      <div>
+        <h3 class="text-[1.1rem] font-semibold m-0 mb-5">Ma façon de travailler</h3>
+        <ul class="principles list-none m-0 p-0">
+          <li class="flex gap-3 text-[0.98rem] leading-[1.6] mb-4 before:content-[''] before:flex-none before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#10D9A0] before:mt-2.25 transition-colors duration-300"
+              [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-[#4B5563]'">
+            Je pars toujours du besoin réel avant d'écrire une ligne de code.
+          </li>
+          <li class="flex gap-3 text-[0.98rem] leading-[1.6] mb-4 before:content-[''] before:flex-none before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#10D9A0] before:mt-2.25 transition-colors duration-300"
+              [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-[#4B5563]'">
+            Je préfère un code simple et lisible à une solution impressionnante mais fragile.
+          </li>
+          <li class="flex gap-3 text-[0.98rem] leading-[1.6] mb-4 before:content-[''] before:flex-none before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#10D9A0] before:mt-2.25 transition-colors duration-300"
+              [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-[#4B5563]'">
+            J'aime apprendre en construisant, projet après projet.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bouton CTA -->
+    <div class="cta-row text-center mt-18">
+      <a class="btn-fill inline-block bg-[#10D9A0] text-white no-underline font-semibold px-7.5 py-3.5 rounded-lg text-[0.98rem] transition-colors duration-150 ease-in-out hover:bg-[#0BB985]" href="#contact">
+        Me contacter
+      </a>
+    </div>
+
+  </div>
+
+</div>

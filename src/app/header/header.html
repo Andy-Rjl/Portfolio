@@ -1,0 +1,46 @@
+<div class="fixed top-0 left-0 right-0 flex justify-between items-center px-10 py-5 border-b-2 transition-colors duration-300 z-50"
+     [ngClass]="isDarkMode() ? 'bg-slate-900 border-b-slate-800 text-white' : 'bg-white border-b-slate-200 text-slate-800'">
+    
+    <!-- Logo AR (adaptatif selon le mode) -->
+    <a (click)="scrollToSection('home')" class="cursor-pointer flex items-center ml-30">
+        <img [src]="isDarkMode() ? 'assets/images/logo-dark.png' : 'assets/images/logo-white.png'" 
+             alt="Logo AR" 
+             class="h-15 w-25 transition-transform duration-200 hover:scale-105" />
+    </a>
+
+    <!-- Menu de navigation et Bouton Thème -->
+    <div class="flex items-center gap-8">
+        <nav class="flex gap-5">
+            @for (item of items; track item.id) {
+                <button 
+                  (click)="scrollToSection(item.id)" 
+                  [ngClass]="activeSection() === item.id 
+                    ? item.colorClass + ' font-bold scale-105' 
+                    : (isDarkMode() ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black')"
+                  class="transition-all duration-200 cursor-pointer hover:opacity-80">
+                  {{ item.label }}
+                </button>
+            }
+        </nav>
+
+        <!-- Bouton Dark Mode (Tout à droite) -->
+        <button 
+          (click)="toggleDarkMode()" 
+          aria-label="Changer le thème"
+          class="p-2 rounded-full transition-colors duration-200 hover:bg-slate-200 dark:hover:bg-slate-800 cursor-pointer">
+          @if (isDarkMode()) {
+            <!-- Icône Soleil pour repasser en mode Clair -->
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          } @else {
+            <!-- Icône Lune pour passer en mode Sombre -->
+            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          }
+        </button>
+    </div>
+</div>

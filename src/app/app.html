@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<!-- On applique ngClass sur <main> pour changer le fond de TOUTE la page -->
+<main [ngClass]="isDarkMode() ? 'bg-slate-900 text-white' : 'bg-white text-slate-800'"
+      class="min-h-screen transition-colors duration-300">
+  
+  <section id="home" class="min-h-screen pt-24 px-10 scroll-mt-28">
+    <app-home></app-home>
+  </section>
+
+  <section id="apropos" class="min-h-screen pt-24 px-10">
+    <app-apropos></app-apropos>
+  </section>
+
+  <section id="projets" class="min-h-auto pt-24 px-10">
+    <app-mes-projets></app-mes-projets>
+  </section>
+
+  <section id="competences" class="min-h-auto pt-24 px-10">
+    <app-mes-competences></app-mes-competences>
+  </section>
+
+  <section id="contact" class="min-h-auto pb-20 pt-24 px-10">
+    <app-contact></app-contact>
+  </section>
+
+</main>

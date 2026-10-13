@@ -1,0 +1,107 @@
+<div class="flex justify-between z-50 px-32 pt-32 transition-colors duration-300">
+    <!-- Colonne gauche (Texte + Badges + Bouton) -->
+    <div class="flex flex-col gap-5 w-1/2">
+        <p class="text-lg transition-colors duration-300"
+           [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-gray-700'">
+            Bonjour, Je suis
+        </p>
+        
+        <h1 class="font-bold text-7xl font-serif transition-colors duration-300"
+            [ngClass]="isDarkMode() ? 'text-white' : 'text-slate-900'">
+            RAJOELINA
+        </h1>
+        
+        <h1 class="font-bold text-5xl font-serif transition-colors duration-300"
+            [ngClass]="isDarkMode() ? 'text-gray-200' : 'text-slate-800'">
+            Andy Niaina
+        </h1>
+        
+        <br>
+        
+        <p class="text-lg transition-colors duration-300"
+           [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-gray-600'">
+            <span class="font-bold">Développeur Full-Stack</span> spécialisé dans la création d'applications web et mobiles performantes, réactives et sur mesure. De la conception d'interfaces fluides à la gestion d'architectures robustes, je transforme vos idées en produits fonctionnels.
+        </p>
+        
+        <br>
+        
+        <!-- Grille des technologies -->
+        <div class="items-center justify-center grid grid-cols-4 gap-5">
+            
+            <!-- React -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-sky-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faReact" class="text-sky-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">React</span>
+            </div>
+
+            <!-- Angular -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-[#DD0031] transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faAngular" class="text-[#DD0031] group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">Angular</span>
+            </div>
+
+            <!-- Tailwind CSS -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-sky-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faTailwind" class="text-sky-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">Tailwind CSS</span>
+            </div>
+
+            <!-- Laravel -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-red-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faLaravel" class="text-red-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">Laravel</span>
+            </div>
+
+            <!-- JavaScript -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-yellow-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faJs" class="text-yellow-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">JavaScript</span>
+            </div>
+
+            <!-- TypeScript -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-blue-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faTs" class="text-blue-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">TypeScript</span>
+            </div>
+
+            <!-- MySQL -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-gray-800 transition-all duration-300 cursor-pointer">
+                <i class="devicon-mysql-plain text-blue-600 group-hover:text-white text-2xl transition-colors duration-300"></i>
+                <span class="font-medium text-sm group-hover:text-white transition-colors duration-300">MySQL</span>
+            </div>
+
+            <!-- Git -->
+            <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
+                 class="group flex items-center justify-center gap-2 px-3 py-1.5 rounded-full border hover:bg-orange-500 transition-all duration-300 cursor-pointer">
+                <fa-icon [icon]="faGit" class="text-orange-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span class="font-medium group-hover:text-white transition-colors duration-300">Git</span>
+            </div>
+
+        </div>
+        
+        <br>
+
+        <!-- Bouton Télécharger CV -->
+        <div>
+            <a href="assets/cv.pdf" download="CV_RAJOELINA_Andy.pdf"
+            [ngClass]="isDarkMode() ? 'bg-slate-800 text-blue-400 border-blue-400' : 'bg-white text-blue-500 border-blue-500'"
+            class="inline-flex items-center gap-2 hover:bg-blue-700 hover:text-white border font-bold py-2 px-4 rounded transition-all duration-300 group cursor-pointer">
+                <fa-icon [icon]="fadownload" class="text-blue-500 group-hover:text-white text-xl transition-colors duration-300"></fa-icon>
+                <span>Télécharger mon CV</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Colonne droite (Photo & Arrière-plan) -->
+    <div>
+        <img [src]="image" class="absolute w-100 h-150 border-2 border-emerald-500 rounded-2xl z-5 object-cover">
+        <div class="w-100 h-150 bg-emerald-500 rotate-12 rounded-2xl transition-colors duration-300"></div>
+    </div>
+</div>
