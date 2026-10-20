@@ -13,9 +13,15 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 export class Home implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private themeObserver?: MutationObserver;
+  private mediaQuery?: MediaQueryList;
+  private mediaListener = (e: MediaQueryListEvent) => this.updateMobile(e.matches);
 
   // Signal pour la détection du mode sombre dans home.html
   isDarkMode = signal<boolean>(false);
+
+
+  // Signal : true si l'écran fait moins de 768px
+  isMobile = signal<boolean>(false);
 
   // images
   image: string = "assets/images/andy.png";
@@ -35,6 +41,11 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      // Détection mobile / desktop
+      this.mediaQuery = window.matchMedia('(max-width: 767px)');
+      this.updateMobile(this.mediaQuery.matches);
+      this.mediaQuery.addEventListener('change', this.mediaListener);
+
       // 1. Détection de l'état initial du thème
       this.isDarkMode.set(document.documentElement.classList.contains('dark'));
 
@@ -52,5 +63,9 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.themeObserver?.disconnect();
+  }
+
+  private updateMobile(matches: boolean) {
+    this.isMobile.set(matches);
   }
 }

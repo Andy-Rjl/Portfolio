@@ -17,12 +17,24 @@ export class Header implements OnInit, AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private cdr = inject(ChangeDetectorRef);
   private observer?: IntersectionObserver;
+  private mediaQuery?: MediaQueryList;
+  private mediaListener = (e: MediaQueryListEvent) => this.updateMobile(e.matches);
 
   // Signal pour la section active
   activeSection = signal<string>('home');
 
   // Signal pour le mode sombre
   isDarkMode = signal<boolean>(true);
+
+  // Signal : true si l'écran fait moins de 768px
+  isMobile = signal<boolean>(false);
+
+  // Signal pour gérer l'ouverture/fermeture du menu mobile
+  isMenuOpen = signal(false);
+
+  toggleMenu() {
+    this.isMenuOpen.update(value => !value);
+  }
 
   items: NavItem[] = [
     { label: 'Accueil', id: 'home', colorClass: 'text-emerald-500' },
@@ -34,11 +46,16 @@ export class Header implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      // Vérification des préférences utilisateur ou du localStorage
+      // Détection mobile / desktop
+      this.mediaQuery = window.matchMedia('(max-width: 767px)');
+      this.updateMobile(this.mediaQuery.matches);
+      this.mediaQuery.addEventListener('change', this.mediaListener);
+
+      // Préférence enregistrée, sinon préférence du système
       const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: light)').matches;
-      
-      const shouldBeDark = savedTheme === 'light' || (!savedTheme && prefersDark);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const shouldBeDark = savedTheme ? savedTheme === 'dark' : prefersDark;
       this.setTheme(shouldBeDark);
     }
   }
@@ -51,6 +68,14 @@ export class Header implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.observer?.disconnect();
+    this.mediaQuery?.removeEventListener('change', this.mediaListener);
+  }
+
+  private updateMobile(matches: boolean) {
+    this.isMobile.set(matches);
+    if (!matches) {
+      this.isMenuOpen.set(false); // referme le menu si on repasse en desktop
+    }
   }
 
   toggleDarkMode() {
@@ -73,6 +98,7 @@ export class Header implements OnInit, AfterViewInit, OnDestroy {
 
   scrollToSection(sectionId: string) {
     this.activeSection.set(sectionId);
+    this.isMenuOpen.set(false); // ferme le menu mobile après un clic
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });

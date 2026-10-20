@@ -1,17 +1,17 @@
-<div class="flex justify-between z-50 px-32 pt-32 transition-colors duration-300">
+<div class="flex justify-between z-50 md:px-32 pt-32 transition-colors duration-300">
     <!-- Colonne gauche (Texte + Badges + Bouton) -->
-    <div class="flex flex-col gap-5 w-1/2">
+    <div class="flex flex-col gap-5 md:w-1/2">
         <p class="text-lg transition-colors duration-300"
            [ngClass]="isDarkMode() ? 'text-gray-300' : 'text-gray-700'">
             Bonjour, Je suis
         </p>
         
-        <h1 class="font-bold text-7xl font-serif transition-colors duration-300"
+        <h1 class="font-bold text-4xl md:text-7xl font-serif transition-colors duration-300"
             [ngClass]="isDarkMode() ? 'text-white' : 'text-slate-900'">
             RAJOELINA
         </h1>
         
-        <h1 class="font-bold text-5xl font-serif transition-colors duration-300"
+        <h1 class="font-bold text-2xl md:text-5xl font-serif transition-colors duration-300"
             [ngClass]="isDarkMode() ? 'text-gray-200' : 'text-slate-800'">
             Andy Niaina
         </h1>
@@ -26,7 +26,7 @@
         <br>
         
         <!-- Grille des technologies -->
-        <div class="items-center justify-center grid grid-cols-4 gap-5">
+        <div class="items-center justify-center grid grid-cols-2 md:grid-cols-4 gap-5">
             
             <!-- React -->
             <div [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-gray-200' : 'bg-gray-100 border-gray-200 text-gray-800'"
@@ -100,8 +100,10 @@
     </div>
 
     <!-- Colonne droite (Photo & Arrière-plan) -->
-    <div>
-        <img [src]="image" class="absolute w-100 h-150 border-2 border-emerald-500 rounded-2xl z-5 object-cover">
-        <div class="w-100 h-150 bg-emerald-500 rotate-12 rounded-2xl transition-colors duration-300"></div>
-    </div>
+     @if (!isMobile()) {
+        <div>
+            <img [src]="image" class="absolute w-100 h-150 border-2 border-emerald-500 rounded-2xl z-5 object-cover">
+            <div class="w-100 h-150 bg-emerald-500 rotate-12 rounded-2xl transition-colors duration-300"></div>
+        </div>
+    }
 </div>
