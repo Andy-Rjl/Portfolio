@@ -52,7 +52,7 @@ export class MesProjets implements OnInit, OnDestroy {
       description: 'Mon site personnel pour présenter mes travaux.',
       detail: "Site responsive construit avec Angular et Tailwind, animations légères et déploiement continu.",
       technos: ['Angular', 'Tailwind CSS', 'Vercel'],
-      lien: 'https://monportfolio.mg',
+      lien: 'https://portfolio-andyrjl.vercel.app/',
     },
   ];
 
