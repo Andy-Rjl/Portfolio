@@ -18,37 +18,38 @@
 
     <p class="timeline-title text-[1.3rem] font-semibold m-0 mb-4">Mon parcours</p>
 
-    <div class="timeline grid grid-cols-3 gap-1 mb-18 max-[700px]:grid-cols-2 max-[700px]:gap-y-8">
+    <div class="timeline grid grid-cols-3 mb-18 max-[700px]:grid-cols-1 max-[700px]:gap-y-8">
       
       <!-- Étape 1 -->
-      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-1.25 after:left-3 after:w-full after:h-0.5"
+      <div class="step relative md:pt-7 pl-7 md:pl-0 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-3 md:after:top-1.25 after:left-1.25 md:after:left-3 after:w-0.5 after:h-full md:after:w-full md:after:h-0.5"
            [ngClass]="isDarkMode() ? 'after:bg-slate-700' : 'after:bg-[#E7E9EC]'">
-        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2023</p>
-        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Formation académique</h4>
-        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2026</p>
+        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Licence obtenue</h4>
+        <p class="text-[0.9rem] leading-[1.6] m-0 md:max-w-[22ch] transition-colors duration-300"
            [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
-          Approfondissement des fondamentaux : algorithmique, bases de données.
+          Diplômé, prêt à rejoindre une équipe et continuer à apprendre.
         </p>
       </div>
 
       <!-- Étape 2 -->
-      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-1.25 after:left-3 after:w-full after:h-0.5"
+      <div class="step relative md:pt-7 pl-7 md:pl-0 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] after:absolute after:top-3 md:after:top-1.25 after:left-1.25 md:after:left-3 after:w-0.5 after:h-full md:after:w-full md:after:h-0.5"
            [ngClass]="isDarkMode() ? 'after:bg-slate-700' : 'after:bg-[#E7E9EC]'">
         <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2023</p>
         <h4 class="text-[1rem] font-bold m-0 mb-1.5">Débuts en code</h4>
-        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+        <p class="text-[0.9rem] leading-[1.6] m-0 md:max-w-[22ch] transition-colors duration-300"
            [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
           Premiers projets personnels, découverte du développement web.
         </p>
       </div>
 
       <!-- Étape 3 -->
-      <div class="step relative pt-7 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:hidden">
-        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2026</p>
-        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Licence obtenue</h4>
-        <p class="text-[0.9rem] leading-[1.6] m-0 max-w-[22ch] transition-colors duration-300"
+      <div class="step relative md:pt-7 pl-7 md:pl-0 before:content-[''] before:absolute before:top-0 before:left-0 before:w-3 before:h-3 before:rounded-full before:bg-[#10D9A0] after:content-[''] md:after:hidden after:absolute after:top-3 after:left-1.25 after:w-0.5 after:h-full"
+           [ngClass]="isDarkMode() ? 'after:bg-slate-700' : 'after:bg-[#E7E9EC]'">
+        <p class="year text-[0.85rem] text-[#0BB985] font-semibold mb-1.5">2023</p>
+        <h4 class="text-[1rem] font-bold m-0 mb-1.5">Formation académique</h4>
+        <p class="text-[0.9rem] leading-[1.6] m-0 md:max-w-[22ch] transition-colors duration-300"
            [ngClass]="isDarkMode() ? 'text-gray-400' : 'text-[#4B5563]'">
-          Diplômé, prêt à rejoindre une équipe et continuer à apprendre.
+          Approfondissement des fondamentaux : algorithmique, bases de données.
         </p>
       </div>
 

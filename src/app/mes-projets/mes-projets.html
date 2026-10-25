@@ -2,13 +2,13 @@
      [ngClass]="isDarkMode() ? 'bg-slate-900 text-white' : 'bg-white text-slate-800'">
 
   <!-- En-tête -->
-  <div class="flex justify-center items-center gap-3">
+  <div class="flex justify-center items-center md:gap-3 gap-1.5">
     <div class="w-15 h-0.5 border bg-sky-700 flex justify-center items-center"></div>
-    <p class="text-center uppercase text-sky-700 font-semibold">projets réalisés</p>
+    <p class="text-sm text-center uppercase text-sky-700 font-semibold">projets réalisés</p>
     <div class="w-15 h-0.5 border bg-sky-700 flex justify-center items-center"></div>
   </div>
 
-  <h1 class="text-5xl md:text-7xl mb-10 font-bold text-center font-serif italic transition-colors duration-300"
+  <h1 class="text-4xl md:text-7xl mb-10 font-bold text-center font-serif italic transition-colors duration-300"
       [ngClass]="isDarkMode() ? 'text-white' : 'text-slate-900'">
     <span class="text-emerald-500">Mes</span> Projets
   </h1>
@@ -16,7 +16,7 @@
   <!-- Grille des cartes -->
   <div class="grid md:grid-cols-3 gap-10 mt-10 grid-cols-1">
     @for (p of projets; track p.titre) {
-      <div class="md:w-125 rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col border hover:border-emerald-500"
+      <div class="w-75 md:w-125 rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col border hover:border-emerald-500"
            [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-gray-100 text-slate-800'">
         
         <img [src]="p.image" [alt]="'logo ' + p.titre" class="md:h-62.5 w-125 object-contain mb-4">
@@ -61,7 +61,7 @@
   <div class="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-start md:justify-center p-4 z-50 transition-opacity duration-300"
        (click)="fermerModal()">
     
-    <div class="rounded-lg md:max-w-lg w-107 md:w-full p-6 relative shadow-2xl border transition-colors duration-300"
+    <div class="rounded-lg md:max-w-lg w-100 md:w-full p-6 relative shadow-2xl border transition-colors duration-300"
          [ngClass]="isDarkMode() ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-gray-200 text-slate-800'"
          (click)="$event.stopPropagation()">
       

@@ -100,7 +100,7 @@ export class SkillsGrid implements OnInit, OnDestroy {
       title: 'Database',
       icon: '🗃',
       skills: [
-        { name: 'MySQL', level: 'Débutant', icon: faDev, couleur: 'text-yellow-500' }
+        { name: 'MySQL', level: 'Débutant', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
       ]
     },
     {
